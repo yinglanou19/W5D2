@@ -1,0 +1,13 @@
+<ul>
+    <li><%= @sub.title %></li>
+    <li><textarea cols="30" rows="10"><%= @sub.description %></textarea></li>
+</ul>
+
+<a href="<%= edit_sub_url(@sub) %>">Edit Sub</a> | <a href="<%= subs_url %>">Index of Subs</a>
+| <a href="<%= new_post_url %>">Add Post</a>
+
+<ul>
+    <% @sub.posts.each do |post| %>
+        <li><a href="<%= post_url(post) %>"><%= post.title %></a></li>
+    <% end %>
+</ul>
